@@ -1,0 +1,39 @@
+[build-system]
+    requires = ["setuptools>=42"]
+    build-backend = "setuptools.build_meta"
+
+[project]
+    dynamic = ["version"]
+
+    name = "lib-name"
+    description = "lib-desc"
+    readme = "README.md"
+    keywords = ["lib-kw"]
+    license = "MIT"
+    license-files = ["LICENSE"]
+    authors = [
+        { name = "IgorNk500", email = "igornk500@outlook.com" },
+        # You need to use your data
+    ]
+    requires-python = ">=3.10.0"
+    classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English"
+    # ...
+    ]
+
+    dependencies = [
+    "..."
+    ]
+
+[project.urls]
+    Homepage = "..."
+#    Documentation = ""
+    Repository = "..."
+    Issues = "..."
+    Changelog = "..."
+
+
+[tool.setuptools.dynamic]
+    version = {attr = "mymodule.__version__"}
