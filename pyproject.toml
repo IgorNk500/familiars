@@ -1,39 +1,39 @@
 [build-system]
-    requires = ["setuptools>=42"]
+    requires = ["setuptools>=42", "wheel"]
     build-backend = "setuptools.build_meta"
 
 [project]
     dynamic = ["version"]
 
-    name = "lib-name"
-    description = "lib-desc"
+    name = "familiars-ai"
+    description = "Support for familiars AI based on pytorch and transformers"
     readme = "README.md"
-    keywords = ["lib-kw"]
+    keywords = ["familiars", "ai-familiars"]
     license = "MIT"
     license-files = ["LICENSE"]
     authors = [
         { name = "IgorNk500", email = "igornk500@outlook.com" },
-        # You need to use your data
     ]
     requires-python = ">=3.10.0"
     classifiers = [
     "Programming Language :: Python :: 3",
     "Development Status :: 1 - Planning",
     "Natural Language :: English"
-    # ...
     ]
 
     dependencies = [
-    "..."
+    "transformers",
+    "torch",
+    "keyboard>=0.13.5"
     ]
 
 [project.urls]
-    Homepage = "..."
-#    Documentation = ""
-    Repository = "..."
-    Issues = "..."
-    Changelog = "..."
+    Homepage = "https://github.com/IgorNk500/familiars"
+    Documentation = "https://github.com/IgorNk500/familiars/wiki"
+    Repository = "https://github.com/IgorNk500/familiars"
+    Issues = "https://github.com/IgorNk500/familiars/issues"
+    Changelog = "https://github.com/IgorNk500/familiars/blob/main/CHANGELOG.md"
 
 
 [tool.setuptools.dynamic]
-    version = {attr = "mymodule.__version__"}
+    version = {attr = "familiars.__version__"}

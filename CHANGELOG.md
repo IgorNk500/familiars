@@ -1,8 +1,6 @@
-# Changelog (current-version)
-## version
-+ ...
-
-...
+# Changelog (0.0.0)
+## 0.0.0
++ Testing and planing
 
 ## That is all
 

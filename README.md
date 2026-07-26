@@ -1,27 +1,31 @@
 <div align="center">
-	Project logo
 	<!--
 	<img src="logo.png" alt="Logo">-->
+	<h1>Familiars</h1>
 	<br/>
 	<br/>
-	Project bages
+	<a href="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml"><img src="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml/badge.svg" alt="Build"></a>
+	<a href="https://github.com/IgorNk500/familiars/actions/workflows/pylint.yml"><img src="https://github.com/IgorNk500/familiars/actions/workflows/pylint.yml/badge.svg" alt="Pylint"></a>
+	<a href="https://github.com/IgorNk500/familiars/actions/workflows/pytest.yml"><img src="https://github.com/IgorNk500/familiars/actions/workflows/pytest.yml/badge.svg" alt="Pytest"></a>
+	<br/>
+	<a href="https://www.python.org/downloads/"><img src="https://img.shields.io/pypi/pyversions/familiars-ai" alt="Supported python versions"></a>
+	<a href="https://github.com/IgorNk500/familiars"><img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="Github repo"></a>
+
 </div>
 
 ***
-
-# Name of the lib
-### Desc.
+### Python library for working with familiars AI based on pytorch and transformers
 ###### *[(Go to changelog)](CHANGELOG.md)*
 
 ## Table of contents
 1. [Installing](#installing)
 2. ...
 3. [Build](#build)
-5. [Workflows](#workflows)
+4. [Workflows](#workflows)
 
 ## Installing
 ```bash
-python -m pip install pypi-id
+python -m pip install familiars-ai
 ```
 
 ...
@@ -41,8 +45,4 @@ Don't forget to change the config in the `pyproject.toml` file before doing this
 + adds it to the release files,
 + and uploads the release to PyPi.
 
-## If you encounter any errors, please open [issue](https://github.com/IgorNk500/pylib-template/issues/new "New issue") on GitHub.
-<!--                                                                           ^
-                                                                               |
-										                                Edit this link!!!
--->
+## If you encounter any errors, please open [issue](https://github.com/IgorNk500/familiars/issues/new "New issue") on GitHub.
