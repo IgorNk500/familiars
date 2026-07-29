@@ -22,9 +22,12 @@
     ]
 
     dependencies = [
-    "transformers",
-    "torch",
-    "keyboard>=0.13.5"
+        "transformers",
+        "torch",
+        "numpy",
+
+        "keyboard>=0.13.5",
+        "mouse>=0.7.1"
     ]
 
 [project.urls]

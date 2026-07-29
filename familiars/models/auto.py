@@ -5,6 +5,7 @@ __all__ = ["AutoFamiliarModel"]
 #__all__ = ["AutoFamiliarModel", "AutoFamiliarConfig"]
 
 #from transformers import AutoConfig, AutoModel
+# noinspection PyProtectedMember
 from transformers.models.auto.auto_factory import _BaseAutoModelClass, _LazyAutoMapping
 #from transformers.models.auto.configuration_auto import _LazyConfigMapping
 from collections import OrderedDict

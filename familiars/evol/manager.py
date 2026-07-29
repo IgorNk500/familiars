@@ -35,7 +35,7 @@ class EvolManager:
 
     def reset_population(self):
         """Resets the population from loaded model"""
-        base_state = copy.deepcopy(model.state_dict())
+        base_state = copy.deepcopy(self.model.state_dict())
         self.population = [copy.deepcopy(base_state) for _ in range(self.population_size)]
 
     def set_best(self, state: dict):

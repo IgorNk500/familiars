@@ -13,9 +13,7 @@ from threading import Event
 
 from ._abc import GameAction, GameTrigger
 from ._named import named_actions
-from ._loader import (GameActionsDC as _GADC,
-                      save_to_pickle as _stp, load_from_pickle as _lfp,
-                      load_from_pretrained as _lfpt, save_to_pretrained as _stpt)
+from ._loader import GameActionsDC as _GameActionsDC
 
 class GameActions:
     """**GameActions is the main class for managing actions, events and triggers.**
@@ -145,20 +143,20 @@ class GameActions:
 
     def to_pickle(self, fp: str):
         """You can export game actions to pickle file"""
-        dc = _GADC(
+        dc = _GameActionsDC(
             self._mactions,
             self._aliases
         )
-        _stp(dc, fp)
+        dc.to_pickle(fp)
 
     def to_pretrained(self, path: str):
         """You can save your game actions to pretrained model on your computer.
         Actions will be saved in `actions.bin` pickle file in the model root."""
-        dc = _GADC(
+        dc = _GameActionsDC(
             self._mactions,
             self._aliases
         )
-        _stpt(dc, path)
+        dc.to_pretrained(path)
 
     # System methods
     def _find_str_action(self, name: str) -> str | None:
@@ -184,7 +182,7 @@ class GameActions:
     def from_pickle(cls, fp: str) -> GameActions:
         """You can load game actions from pickle file
         **!!!WARNING!!! Load pickle file only from trusted sources! Pickle file can contain viruses! !!!WARNING!!!**"""
-        dc = _lfp(fp)
+        dc = _GameActionsDC.from_pickle(fp)
         return cls(
             dc.mactions,
             dc.aliases
@@ -194,7 +192,7 @@ class GameActions:
     def from_pretrained(cls, name_or_path: str, *args, **kwargs):
         """You can load game actions from pretrained model on *HuggingFace* or on local computer.
         Model files must contain `actions.bin` pickle file created with `actions.save_pretrained("name_of_your_model")`"""
-        dc = _lfpt(name_or_path, *args, **kwargs)
+        dc = _GameActionsDC.from_pretrained(name_or_path, *args, **kwargs)
         return cls(
             dc.mactions,
             dc.aliases

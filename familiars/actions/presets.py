@@ -17,7 +17,7 @@ __all__ = [
 ]
 
 import keyboard as kb
-import keyboard.mouse as m
+import mouse as m
 from subprocess import run as sp_run
 from typing import Literal, Optional
 
@@ -88,7 +88,7 @@ class GameAction_mouse(GameAction):
 
     def activate(self):
         act = self.action
-        if px and py:
+        if self.px and self.py:
             m.move(self.px, self.py, True)
 
         if act == "click":

@@ -3,7 +3,7 @@ AutoFamiliarModel;
 DATA_FAMILIAR_CONFIGS; SCREEN_FAMILIAR_CONFIGS.
 
 Copyright (c) 2026 IgorNk500"""
-__all__ = ["FamiliarModel", "FamiliarConfig"
+__all__ = ["FamiliarModel", "FamiliarConfig",
            "NormalDataFamiliarModel", "NormalDataFamiliarConfig",
            "NormalScreenFamiliarModel", "NormalScreenFamiliarConfig",
            "EvolDataFamiliarModel", "EvolDataFamiliarConfig",
@@ -21,7 +21,7 @@ from typing import Literal, Optional
 
 from .auto import AutoFamiliarModel
 from .head import GameActionHead
-from .std_configs import D_FAMILIAR_CONFIGS, S_FAMILIAR_CONFIGS
+from .std_configs import DATA_FAMILIAR_CONFIGS, SCREEN_FAMILIAR_CONFIGS
 
 ##########  ABSTRACT CLASSES  ##########
 

@@ -54,7 +54,7 @@ class EvolTrainer(Trainer):
 
         # Creating the initial population: we save the state_dict of each individual
         base_state = copy.deepcopy(model.state_dict())
-        self.population = [copy.deepcopy(base_state) for _ in range(population_size)]
+        self.population = [copy.deepcopy(base_state) for _ in range(self.population_size)]
         # The best individual and its fitness
         self.best_state = base_state
         self.best_fitness = -np.inf
@@ -69,7 +69,7 @@ class EvolTrainer(Trainer):
         # The standard start of train – triggers on_train_begin callbacks
         self.callback_handler.train_begin(self.args, self.state, self.control)
 
-        stop_action = self.mgr.actions.stop_train_action
+        stop_action = self.mgr.actions.stop_train_event
         trg = self.mgr.actions.trigger
 
         trg("pre_cycle")
@@ -172,7 +172,7 @@ class EvolTrainer(Trainer):
     def _evolve_population(self, fitness_scores):
         # Save best
         sorted_indices = np.argsort(fitness_scores)[::-1]
-        new_population = [copy.deepcode(self.population[i]) for i in sorted_indices[:self.elitism]]
+        new_population = [copy.deepcopy(self.population[i]) for i in sorted_indices[:self.elitism]]
 
         # Probabilities of parents' choice (softmax on fitness)
         probs = torch.softmax(torch.tensor(fitness_scores, dtype=torch.float), dim=0).numpy()
@@ -189,7 +189,7 @@ class EvolTrainer(Trainer):
         self.population = new_population
 
     def _crossover(self, state1, state2):
-        child = copy.deepcode(state1)
+        child = copy.deepcopy(state1)
         with torch.no_grad():
             for key in child.keys():
                 if state1[key].dtype in (torch.float32, torch.float64, torch.bfloat16):  # Only float
@@ -222,7 +222,7 @@ class EvolTrainer(Trainer):
 
     def load_state(self, checkpoint_folder):
         """Load state from checkpoint"""
-        super().load_state(checkpoint_folder)
+        #super().load_state(checkpoint_folder)
         population_path = os.path.join(checkpoint_folder, "population.bin")
         if os.path.exists(population_path):
             checkpoint = torch.load(population_path)
