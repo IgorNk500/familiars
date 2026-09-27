@@ -3,10 +3,12 @@
 	<img src="logo.png" alt="Logo">-->
 	<h1 style="color: #3081ba">Familiars</h1>
 	<div align="center" style="border: 5px solid #2980b9; border-radius: 8px; box-shadow: 0 0 10px rgba(36, 124, 180, 0.5), 0 0 30px 6px rgba(36, 124, 180, 0.5), inset 0 0 5px #00f3ff;">
+	<blockquote>
 	<p>A familiar is a magical spirit or creature that,
 	according to European folklore and witchcraft traditions,
 	serves a witch, sorcerer, or mage, assisting them in sorcery,
 	protecting them from enemies, and often acting as a loyal companion.</p>
+	</blockquote>
 	</div>
 	<br/>
 	<br/>
