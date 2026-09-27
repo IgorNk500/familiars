@@ -1,4 +1,4 @@
-"""Familiars. Neural AI models for playing games
+"""Familiars. Neural AI models for playing some computer games
 -----
 
 *A familiar is a magical spirit or creature that,
@@ -10,6 +10,7 @@ Links:
 -----
 
 + **GitHub:** https://github.com/IgorNk500/familiars
++ **Readme:** https://github.com/IgorNk500/familiars/blob/main/README.md
 + **Documentation:** https://github.com/IgorNk500/familiars/wiki
 + **Issues:** https://github.com/IgorNk500/familiars/issues
 + **Changelog:** https://github.com/IgorNk500/familiars/blob/main/CHANGELOG.md
@@ -28,14 +29,12 @@ __all__ = [
     "EvolScreenFamiliarModel", "EvolScreenFamiliarConfig"
 ]
 
-from .pipeline import pipeline
-
-from .io import FamiliarIO
-from .evol import EvolManager, EvolTrainer
 from .actions import GameActions, GameAction, GameTrigger
-
+from .evol import EvolManager, EvolTrainer
+from .io import FamiliarIO
+from .models import EvolDataFamiliarModel, EvolDataFamiliarConfig
+from .models import EvolScreenFamiliarModel, EvolScreenFamiliarConfig
 from .models import FamiliarModel, FamiliarConfig
 from .models import NormalDataFamiliarModel, NormalDataFamiliarConfig
 from .models import NormalScreenFamiliarModel, NormalScreenFamiliarConfig
-from .models import EvolDataFamiliarModel, EvolDataFamiliarConfig
-from .models import EvolScreenFamiliarModel, EvolScreenFamiliarConfig
+from .pipeline import pipeline

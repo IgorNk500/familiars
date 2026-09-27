@@ -1,13 +1,13 @@
 <div align="center">
 	<!--
 	<img src="logo.png" alt="Logo">-->
-	<h1>Familiars</h1>
-	<blockquote>
+	<h1 style="color: #3081ba">Familiars</h1>
+	<div align="center" style="border: 5px solid #2980b9; border-radius: 8px; box-shadow: 0 0 10px rgba(36, 124, 180, 0.5), 0 0 30px 6px rgba(36, 124, 180, 0.5), inset 0 0 5px #00f3ff;">
 	<p>A familiar is a magical spirit or creature that,
 	according to European folklore and witchcraft traditions,
 	serves a witch, sorcerer, or mage, assisting them in sorcery,
 	protecting them from enemies, and often acting as a loyal companion.</p>
-	</blockquote>
+	</div>
 	<br/>
 	<br/>
 	<a href="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml"><img src="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml/badge.svg" alt="Build"></a>
@@ -20,21 +20,39 @@
 </div>
 
 ***
-### Python library for working with familiars AI based on pytorch and transformers
+
+### Familiars. Neural AI models for playing some computer games, based on PyTorch and Transformers
 ###### *[(Go to changelog)](CHANGELOG.md)*
 
 ## Table of contents
 1. [Installing](#installing)
-2. ...
-3. [Build](#build)
-4. [Workflows](#workflows)
+2. [Links](#links)
+3. [Documentation](#documentation)
+4. [Build](#build)
+5. [Workflows](#workflows)
 
 ## Installing
+
++ Go to https://pytorch.org/projects/pytorch/, select and install torch for your cpu/gpu *(recommended CUDA GPU)*
++ Next, exec:
 ```bash
 python -m pip install familiars-ai
 ```
 
-...
+**I recommend using `venv` for large libraries like PyTorch and Transformers.**
+
+## Links
+
++ **GitHub:** https://github.com/IgorNk500/familiars
++ **Documentation:** https://github.com/IgorNk500/familiars/wiki
++ **Issues:** https://github.com/IgorNk500/familiars/issues
++ **Changelog:** https://github.com/IgorNk500/familiars/blob/main/CHANGELOG.md
+
+## Documentation
+
+**See [here](https://github.com/IgorNk500/familiars/wiki)**\
+**Docs for screen-familiars see in [repo](https://github.com/IgorNk500/screen-familiars)
+or [here](https://github.com/IgorNk500/screen-familiars/wiki)**
 
 ## Build
 ### To build the package, run:
