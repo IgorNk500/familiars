@@ -293,7 +293,7 @@ class EvolDataFamiliarModel(NormalDataFamiliarModel):
     **This is an evolutionary model.**
     This means that it can learn on its own and does not need training data.
 
-    **Use it with `evol.EvolTrainer`.**"""
+    **Use it with `eval.EvalTrainer`.**"""
 
     config_class = EvolDataFamiliarConfig
     is_evol = True
@@ -327,7 +327,7 @@ class EvolScreenFamiliarModel(NormalScreenFamiliarModel):
     **This is an evolutionary model.**
     This means that it can learn on its own and does not need training data.
 
-    **Use it with `evol.EvolTrainer`.**"""
+    **Use it with `eval.EvalTrainer`.**"""
 
     config_class = EvolScreenFamiliarConfig
     is_evol = True

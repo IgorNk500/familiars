@@ -1,10 +1,10 @@
-"""Familiars Tools. EvolTrainer and EvolManager.
+"""Familiars Tools. EvalTrainer and EvalManager.
 
 **This module is a very important part of familiars.**
 It creates evolutionary neural networks compatible with the *Trainer API* and *GameActions*.
 
 Copyright (c) 2026 IgorNk500"""
-__all__ = ["EvolTrainer", "EvolManager"]
+__all__ = ["EvalTrainer", "EvalManager"]
 
-from .trainer import EvolTrainer
-from .manager import EvolManager
+from .trainer import EvalTrainer
+from .manager import EvalManager

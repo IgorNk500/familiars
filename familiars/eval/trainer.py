@@ -1,4 +1,4 @@
-"""Familiars Tools. EvolTrainer.
+"""Familiars Tools. EvalTrainer.
 
 Copyright (c) 2026 IgorNk500"""
 
@@ -11,7 +11,7 @@ from transformers import Trainer, TrainingArguments
 from transformers.utils.import_utils import requires
 #from transformers.trainer_utils import EvalPrediction
 
-from .manager import EvolManager
+from .manager import EvalManager
 
 @requires(
     backends=(
@@ -19,7 +19,7 @@ from .manager import EvolManager
         "accelerate",
     )
 )
-class EvolTrainer(Trainer):
+class EvalTrainer(Trainer):
     """**Evolution trainer for familiars models inheriting transformers.Trainer.**
 
     Instead of gradients, it uses a genetic algorithm over a population of models.
@@ -28,7 +28,7 @@ class EvolTrainer(Trainer):
 
     def __init__(
         self,
-        mgr: EvolManager,
+        mgr: EvalManager,
         args: TrainingArguments,
         mutation_rate: float = 0.1,
         mutation_power: float = 0.02,
@@ -65,7 +65,7 @@ class EvolTrainer(Trainer):
         mgr.actions.trigger("post_init")
 
     def train(self, resume_from_checkpoint: Optional[str] = None, **kwargs):
-        """Main evol training entry point"""
+        """Main eval training entry point"""
         # The standard start of train – triggers on_train_begin callbacks
         self.callback_handler.train_begin(self.args, self.state, self.control)
 
@@ -128,7 +128,7 @@ class EvolTrainer(Trainer):
 
 
     def _play_cycle(self) -> int:
-        """**Game cycle.** *(1 life)* Works with ScreenIO or FamiliarIO; GameActions; EvolManager."""
+        """**Game cycle.** *(1 life)* Works with ScreenIO or FamiliarIO; GameActions; EvalManager."""
         io = self.mgr.io
 
         dead = False
