@@ -45,4 +45,6 @@ Don't forget to change the config in the `pyproject.toml` file before doing this
 + adds it to the release files,
 + and uploads the release to PyPi.
 
+**Also, project contains pytest and pylint workflows**
+
 ## If you encounter any errors, please open [issue](https://github.com/IgorNk500/familiars/issues/new "New issue") on GitHub.
