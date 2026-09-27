@@ -4,8 +4,8 @@
 	<h1>Familiars</h1>
 	<blockquote>
 	<p>A familiar is a magical spirit or creature that,
-	according to European folklore and witchcraft traditions,</p>
-	<p>serves a witch, sorcerer, or mage, assisting them in sorcery,
+	according to European folklore and witchcraft traditions,
+	serves a witch, sorcerer, or mage, assisting them in sorcery,
 	protecting them from enemies, and often acting as a loyal companion.</p>
 	</blockquote>
 	<br/>
