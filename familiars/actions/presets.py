@@ -1,8 +1,8 @@
 """Presets of game actions and triggers
 
 **List of presets:**\n
-+ **GameAction_run** (run): runs cmd/bash commands with subprocess
-+ **GameAction_keyboard**"""
++ **GameAction_Run** (run): runs cmd/bash commands with subprocess
++ **GameAction_Keyboard**"""
 
 __all__ = [
     "ACTION_CLICK",
@@ -11,9 +11,9 @@ __all__ = [
     "ACTION_MOUSE_LEFT",
     "ACTION_MOUSE_RIGHT",
     "ACTION_MOUSE_DOUBLE_CLICK",
-    "GameAction_run",
-    "GameAction_keyboard",
-    "GameAction_mouse"
+    "GameAction_Run",
+    "GameAction_Keyboard",
+    "GameAction_Mouse"
 ]
 
 import keyboard as kb
@@ -34,7 +34,7 @@ ACTION_MOUSE_RIGHT = "right"
 
 # Classes
 
-class GameAction_run(GameAction):
+class GameAction_Run(GameAction):
     """Runs cmd/bash commands with subprocess"""
     def __init__(self, **kwargs):
         self.command = kwargs
@@ -42,7 +42,8 @@ class GameAction_run(GameAction):
     def activate(self):
         return sp_run(self.command)
 
-class GameAction_keyboard(GameAction):
+
+class GameAction_Keyboard(GameAction):
     """**Click/Press/Release button on keyboard.**
 
     Action argument must be "click", "press" or "release". Check ACTION_... constants.
@@ -65,7 +66,8 @@ class GameAction_keyboard(GameAction):
         else:
             raise ValueError('Action argument must be "click", "press" or "release". Check ACTION_... constants.')
 
-class GameAction_mouse(GameAction):
+
+class GameAction_Mouse(GameAction):
     """**Click/Press/Release/Double-click left/right mouse button**
 
     Action argument must be "click", "press", "release" or "dclick". Check ACTION_... constants.

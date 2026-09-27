@@ -4,14 +4,14 @@ __all__ = ["named_actions"]
 
 from ._abc import GameAction
 from .presets import (
-                      GameAction_run,
-                      GameAction_keyboard,
-                      GameAction_mouse
+    GameAction_Run,
+    GameAction_Keyboard,
+    GameAction_Mouse
                      )
 
 # Named action can be used as MACTION only.
 named_actions: dict[str, type[GameAction]] = {
-    "run": GameAction_run,
-    "kb": GameAction_keyboard, "keyboard": GameAction_keyboard,
-    "mouse": GameAction_mouse
+    "run": GameAction_Run,
+    "kb": GameAction_Keyboard, "keyboard": GameAction_Keyboard,
+    "mouse": GameAction_Mouse
 }

@@ -30,7 +30,7 @@ FAMILIAR_CONFIG_MAPPING_NAMES = OrderedDict(
         ("data_normal_familiar", "NormalDataFamiliarConfig"),
         ("screen_normal_familiar", "NormalScreenFamiliarConfig"),
 
-        # Configs for eval models
+        # Configs for evol models
         ("data_evol_familiar", "EvolDataFamiliarConfig"),
         ("screen_evol_familiar", "EvolScreenFamiliarConfig")
     ]

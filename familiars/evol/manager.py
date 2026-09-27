@@ -1,7 +1,7 @@
-"""Familiars Tools. EvalManager.
+"""Familiars Tools. EvolManager.
 
-**EvalManager contains model populations and their properties.**
-Used together with *FamiliarsIO* *(or screen-familiars.ScreenIO)* and *EvalTrainer*
+**EvolManager contains model populations and their properties.**
+Used together with *FamiliarsIO* *(or screen-familiars.ScreenIO)* and *EvolTrainer*
 
 Copyright (c) 2026 IgorNk500"""
 import copy
@@ -9,20 +9,22 @@ import copy
 from ..io import BaseIO
 from ..exceptions import ModelTypeError, IOTypeError
 
-class EvalManager:
-    """**EvalManager contains model populations and their properties.**
-    Used together with `FamiliarsIO` *(or `screen-familiars.ScreenIO`)* and `EvalTrainer`"""
+
+class EvolManager:
+    """**EvolManager contains model populations and their properties.**
+    Used together with `FamiliarsIO` *(or `screen-familiars.ScreenIO`)* and `EvolTrainer`"""
 
     def __init__(self, io: BaseIO, population_size: int):
         self.io = io
         self.model = io.model # Model link
         self.actions = io.actions # GameActions link
 
-        # Is IO supports eval training?
-        if not io.supports_evol_training: raise IOTypeError("{} doesn't support eval training.".format(io.__class__.__name__))
+        # Is IO supports evol training?
+        if not io.supports_evol_training: raise IOTypeError(
+            "{} doesn't support evol training.".format(io.__class__.__name__))
 
-        # Is it an eval model?
-        if not self.model.is_evol: raise ModelTypeError("{} isn't eval model.".format(self.model.__class__.__name__))
+        # Is it an evol model?
+        if not self.model.is_evol: raise ModelTypeError("{} isn't evol model.".format(self.model.__class__.__name__))
 
         self.population_size = population_size
 

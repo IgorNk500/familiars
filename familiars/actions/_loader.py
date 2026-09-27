@@ -1,11 +1,10 @@
 """Adds class methods *'from_pretrained'* and *'from_dict'* in GameActions class.
 
 The loader users the *GameActionsDC* dataclass to save/load *GameActions* as a pickle file\n
-**!!!WARNING!!! Load pickle file only from trusted sources! Pickle file can contain viruses! !!!WARNING!!!**"""
+**!!!WARNING!!! Load pickle files only from trusted sources! Pickle files can contain viruses! !!!WARNING!!!**"""
 from dataclasses import dataclass, field
-import os, tqdm
+import os
 import pickle as p
-from pickle import UnpicklingError
 
 import huggingface_hub as hf
 

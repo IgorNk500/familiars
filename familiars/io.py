@@ -5,7 +5,7 @@ import abc
 from typing import Callable
 
 from .actions import GameActions
-from .models import FamiliarModel, FamiliarConfig, NormalDataFamiliarModel
+from .models import FamiliarModel, NormalDataFamiliarModel
 from .exceptions import NumActionsError, ModelTypeError, ModelBrokenError
 
 class BaseIO(abc.ABC):
@@ -52,15 +52,19 @@ class FamiliarIO(BaseIO):
                                                                                 "For example, screen-familiars.ScreenFamiliarIO")
 
         # Check the actions num
-        if model.config.num_actions != actions.num_actions: raise NumActionsError(f"Model num_actions ({model.config.num_actions}) != GameActions num_actions ({actions.num_actions})")
+        if model.config.num_actions != actions.num_actions:
+            raise NumActionsError(
+                f"Model num_actions ({model.config.num_actions}) != GameActions num_actions ({actions.num_actions})"
+            )
 
     def play(self):
-        """Playing cycle. WHILE NOT DEATH"""
+        """Playing cycle. WHILE NOT DEAD"""
         i = 0 # Iteration counter for custom play_once function
         while not self.is_dead:
             self._play_once(i=i)
             self.actions.update()
             i += 1
+        return i
 
 
     def _play_once(self, *args, **kwargs):
@@ -73,8 +77,8 @@ class FamiliarIO(BaseIO):
 
         # STEP 3: Check if the model is broken
         if action > self._model_num_actions or len(args) != self._model_num_args:
-            raise ModelBrokenError("{} is broken."
-                                   "If you think otherwise, please open issue on GitHub.".format(self.model.__class__.__name__))
+            raise ModelBrokenError(f"{self.model.__class__.__name__} is broken."
+                                   f"If you think otherwise, please open issue on GitHub.")
 
         # STEP 4: Run action with args
         self.actions.run_maction(action, *args)

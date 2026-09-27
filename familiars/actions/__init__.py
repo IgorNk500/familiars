@@ -20,7 +20,7 @@ class GameActions:
 
      It is he who combines your *familiar* with the game and allows you to track training progress.
 
-     **Read more in the docs.**"""
+     **Read more in the docs**"""
     def __init__(self, mactions: list[GameAction] = None, aliases: dict[str | GameTrigger, str | GameAction] = None):
         if mactions is None:
             mactions = []
@@ -181,7 +181,7 @@ class GameActions:
     @classmethod
     def from_pickle(cls, fp: str) -> GameActions:
         """You can load game actions from pickle file
-        **!!!WARNING!!! Load pickle file only from trusted sources! Pickle file can contain viruses! !!!WARNING!!!**"""
+        **!!!WARNING!!! Load pickle files only from trusted sources! Pickle files can contain viruses! !!!WARNING!!!**"""
         dc = _GameActionsDC.from_pickle(fp)
         return cls(
             dc.mactions,

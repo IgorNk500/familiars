@@ -4,3 +4,5 @@ torch
 
 keyboard>=0.13.5
 mouse>=0.7.1
+
+huggingface_hub

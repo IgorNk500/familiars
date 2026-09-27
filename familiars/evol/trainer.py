@@ -1,4 +1,4 @@
-"""Familiars Tools. EvalTrainer.
+"""Familiars Tools. EvolTrainer.
 
 Copyright (c) 2026 IgorNk500"""
 
@@ -11,7 +11,7 @@ from transformers import Trainer, TrainingArguments
 from transformers.utils.import_utils import requires
 #from transformers.trainer_utils import EvalPrediction
 
-from .manager import EvalManager
+from .manager import EvolManager
 
 @requires(
     backends=(
@@ -19,7 +19,7 @@ from .manager import EvalManager
         "accelerate",
     )
 )
-class EvalTrainer(Trainer):
+class EvolTrainer(Trainer):
     """**Evolution trainer for familiars models inheriting transformers.Trainer.**
 
     Instead of gradients, it uses a genetic algorithm over a population of models.
@@ -28,7 +28,7 @@ class EvalTrainer(Trainer):
 
     def __init__(
         self,
-        mgr: EvalManager,
+        mgr: EvolManager,
         args: TrainingArguments,
         mutation_rate: float = 0.1,
         mutation_power: float = 0.02,
@@ -65,7 +65,7 @@ class EvalTrainer(Trainer):
         mgr.actions.trigger("post_init")
 
     def train(self, resume_from_checkpoint: Optional[str] = None, **kwargs):
-        """Main eval training entry point"""
+        """Main evol training entry point"""
         # The standard start of train – triggers on_train_begin callbacks
         self.callback_handler.train_begin(self.args, self.state, self.control)
 
@@ -128,7 +128,7 @@ class EvalTrainer(Trainer):
 
 
     def _play_cycle(self) -> int:
-        """**Game cycle.** *(1 life)* Works with ScreenIO or FamiliarIO; GameActions; EvalManager."""
+        """**Game cycle.** *(1 life)* Works with ScreenIO or FamiliarIO; GameActions; EvolManager."""
         io = self.mgr.io
 
         dead = False
@@ -139,7 +139,7 @@ class EvalTrainer(Trainer):
     # ------------------------------------------------------------------
     # Evaluation best model
     # ------------------------------------------------------------------
-    def evaluate(self, eval_dataset=None, ignore_keys=None, metric_key_prefix: str = "eval", episodes: int = 10):
+    def evaluate(self, eval_dataset=None, ignore_keys=None, metric_key_prefix: str = "evol", episodes: int = 10):
         self.model.load_state_dict(self.best_state)
         total_reward = 0.0
         with torch.no_grad():

@@ -6,9 +6,9 @@
     dynamic = ["version"]
 
     name = "familiars-ai"
-    description = "Support for familiars AI based on pytorch and transformers"
+description = "Support for Familiars AI, based on pytorch and transformers"
     readme = "README.md"
-    keywords = ["familiars", "ai-familiars"]
+keywords = ["familiars", "ai-familiars", "familiars-ai", "nn-familiars", "familiars-nn"]
     license = "MIT"
     license-files = ["LICENSE"]
     authors = [
@@ -27,7 +27,8 @@
         "numpy",
 
         "keyboard>=0.13.5",
-        "mouse>=0.7.1"
+        "mouse>=0.7.1",
+        "huggingface_hub"
     ]
 
 [project.urls]
@@ -36,7 +37,6 @@
     Repository = "https://github.com/IgorNk500/familiars"
     Issues = "https://github.com/IgorNk500/familiars/issues"
     Changelog = "https://github.com/IgorNk500/familiars/blob/main/CHANGELOG.md"
-
 
 [tool.setuptools.dynamic]
     version = {attr = "familiars.__version__"}

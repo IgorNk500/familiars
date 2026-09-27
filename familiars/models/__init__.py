@@ -145,8 +145,6 @@ class NormalDataFamiliarModel(FamiliarModel):
 
         return action, args_norm
 
-    #__call__ = generate
-
 
 ########################################################################################################################
 
@@ -197,7 +195,9 @@ class NormalScreenFamiliarModel(FamiliarModel):
             # Convert size to model config
             if not config in SCREEN_FAMILIAR_CONFIGS:
                 raise ValueError(
-                    f"'{config}' not found in Screen familiar configs. Use custom config or set config to 'tiny', 'small', 'medium', 'big' or 'very_big'.\n Read more in the docs.")
+                    f"'{config}' not found in Screen familiar configs. "
+                    f"Use custom config or set config to 'tiny', 'small', 'medium', 'big' or 'very_big'.\n"
+                    f"Read more in the docs.")
 
             config = self.config_class.from_dict(SCREEN_FAMILIAR_CONFIGS[config])
 
@@ -293,7 +293,7 @@ class EvolDataFamiliarModel(NormalDataFamiliarModel):
     **This is an evolutionary model.**
     This means that it can learn on its own and does not need training data.
 
-    **Use it with `eval.EvalTrainer`.**"""
+    **Use it with `evol.EvolTrainer`.**"""
 
     config_class = EvolDataFamiliarConfig
     is_evol = True
@@ -327,7 +327,7 @@ class EvolScreenFamiliarModel(NormalScreenFamiliarModel):
     **This is an evolutionary model.**
     This means that it can learn on its own and does not need training data.
 
-    **Use it with `eval.EvalTrainer`.**"""
+    **Use it with `evol.EvolTrainer`.**"""
 
     config_class = EvolScreenFamiliarConfig
     is_evol = True
