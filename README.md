@@ -2,6 +2,12 @@
 	<!--
 	<img src="logo.png" alt="Logo">-->
 	<h1>Familiars</h1>
+	<blockquote>
+	<p>A familiar is a magical spirit or creature that,
+	according to European folklore and witchcraft traditions,</p>
+	<p>serves a witch, sorcerer, or mage, assisting them in sorcery,
+	protecting them from enemies, and often acting as a loyal companion.</p>
+	</blockquote>
 	<br/>
 	<br/>
 	<a href="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml"><img src="https://github.com/IgorNk500/familiars/actions/workflows/release_build.yml/badge.svg" alt="Build"></a>
